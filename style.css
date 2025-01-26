@@ -1,0 +1,138 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+body{
+    background-color: rgb(99, 250, 250);
+    width: 100%;
+    height: 100vh;
+}
+.img{
+width: 45px;
+}
+.todo-container{
+    background-color: white;
+    /*give postion to positioning*/
+    position: relative;
+    left: 50%;
+    top: 50%;
+    /*it maker center*/
+    transform: translate(-50%, -50%);
+    /*give width accordingly;otherwise widhth is above is 100% and care about %and pixel*/
+    max-width:550px;
+}
+h1{
+    display: flex;
+    align-items: center;/*at y-axis*/
+    /*space between heading elements*/
+    justify-content: space-between;
+}
+.input{
+    /*give display to perform style*/
+    display: flex;
+    justify-content: space-between;/*at x-axis*/
+    padding: 10px;
+}
+#input-field{
+border-radius: 30px;
+width: 70%;
+border: none;
+/*on click there is an outline shoes*/
+outline: none;
+padding: 8px;
+font-size: 18px;
+font-weight: 700;
+/*ver hori blur shadow() set shadow inside*/
+box-shadow: 0 2px 6px rgba(0,0,0,0.5) inset;
+
+}
+#input-field::placeholder{
+color: #dd5746;
+}
+.btn{
+    background-color:#88322c;
+    border-radius: 30px;
+    border: none;
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: #ffc470;
+    transition: all 0.4s;
+}
+ul li{
+    list-style: none;
+    /background-color: blueviolet;
+    /*all lists taken imdivisual back ground color this will reflect give margin*/
+    /*margin gives the border from all sides and 1px or 2px gives thickness; size of block affects*/
+    /margin: 10px;
+    /*margin block gives margin from olny between blocks; size of bocks not affected */
+    margin-block: 20px;
+    border: 1px solid;
+    /border: none;
+    padding: 10px 40px;/*ltopbottom leftright (inside*/
+    border-radius: 30px;
+    font-weight: 1000;
+    font-size: 18px;
+    /*give position relative that other elements take pace i.e:done ,undone*/
+   position: relative;
+   /*the li has text content which selects by cursor*/
+    user-select: none;
+}
+ul li::before{
+    content: "";
+    background:url(undone_icon.jpeg);
+    /*the icon still not visible*/
+    background-size: cover;
+    position:center;
+    position: absolute;
+    left:8px;/*and ulli padding from leftright is 50px*/
+    width: 30px;
+    height: 30px;
+    /* because of before property uses icon shows using width,height,size:cover */
+    /*but it overlaps the text make the padding from leftright too of ulli*/
+    
+}
+.checked{
+    background-color:#88322c;
+    color: white;
+
+
+}
+.checked::before{
+    background: url(done_icon.jpeg);
+    /*icon not showing give wid hig and background-size*/
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+}
+
+span{
+    /*we've to set positning*/
+    right: 15px;
+    position: absolute;
+    font-size: 18px;
+    /*give heigh,width same for circle radious*/
+    
+    height: 30px;
+    width: 30px;
+    border-radius: 50px;
+    /*if set desire position alignment*/
+    text-align: center;/*at y-axis*/
+    cursor: pointer;
+}
+span:hover{
+    background-color: black;
+    /cursor: pointer;
+    color: white;
+    border: 1px solid;
+}
+ul li.checked span:hover{
+    background-color: #050000;
+    /color: #ffc470;
+    color: red;
+}
